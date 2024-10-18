@@ -2,8 +2,82 @@
     "locations":[
         {
             "id": 0,
-            "name": "",
-            "tags": ""
+            "location": "New York City",
+            "type": "City",
+            "description" : "",
+            "image": "./images/NewYorkCity.jpg", 
+            "individual-images" : [
+                "./images/CentralPark-NYC.jpg", 
+                "./images/TimesSquare-NYC.jpg",
+                "./images/ChinaTown-NYC.jpg",
+                "./images/Liberty-NYC.jpg"
+            ]
+        }, 
+        {
+            "id": 1,
+            "location": "Chicago",
+            "type": "City",
+            "image": "./images/Chicago.jpg",
+            "individual-images" : [
+                "./images/River-Chicago.jpg", 
+                "./images/Bean-Chicago.jpg",
+                "./images/Beach-Chicago.jpg",
+                "./images/Train-Chicago.jpg"
+            ]
+        }, 
+        {
+            "id": 2,
+            "location": "San Francisco",
+            "type": "Beach",
+            "description" : "",
+            "image": "./images/SanFranciso.jpg",
+            "individual-images" : [
+                "./images/BayArea-SF.jpg", 
+                "./images/Bridge-SF.jpg",
+                "./images/Surf-SF.jpg",
+                "./images/Trolley-SF.jpg"
+            ]
+        }, 
+        {
+            "id": 3,
+            "location": "Miami",
+            "type": "Beach",
+            "description" : "",
+            "image": "./images/Miami.jpg",
+            "individual-images" : [
+                "./images/Beach-Miami.jpg", 
+                "./images/Nightlife-Miami.jpg",
+                "./images/Downtown-Miami.jpg",
+                "./images/Boat-Miami.jpg"
+            ]
+        }, 
+        {
+            "id": 4,
+            "location": "Jackson Hole",
+            "type": "Mountain",
+            "description" : "",
+            "image": "./images/JacksonHole.jpg",
+            "individual-images" : [
+                "./images/Shops-JacksonHole.jpg", 
+                "./images/Ski-JacksonHole.jpg",
+                "./images/Hike-JacksonHole.jpg",
+                "./images/OldTown-JacksonHole.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "location": "Denver",
+            "type": "Mountain",
+            "description" : "",
+            "image": "./images/Denver.jpg",
+            "individual-images" : [
+                "./images/Winter-Denver.jpg", 
+                "./images/RedRock-Denver.jpg",
+                "./images/Hike-Denver.jpg",
+                "./images/City-Denver.jpg"
+            ]
         }
     ]
+
+
 }

@@ -32,10 +32,10 @@ async function createRandomDestinations() {
     addCard.innerHTML = `
           <div class="card shadow-sm">
               <img src=${location.image} class="card-img-top" alt="..."></img>
-              <div class="card-body">
+              <div class="card-body text-center">
                   <p class="card-text"> <strong>${location.location}</strong></p>
                   <p ckass="card-text">${location.description}</p>
-                  <button id="${location.id}">Learn more</button>
+                  <button class="learn btn btn-secondary" id="${location.id}">Learn more</button>
               </div>
           </div>
       `;

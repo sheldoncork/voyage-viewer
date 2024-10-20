@@ -1,6 +1,4 @@
-addEventListener("DOMContentLoaded", () => {
-  generateCards();
-});
+window.addEventListener("DOMContentLoaded", generateCards);
 
 function getData(location = "./data.json") {
   return new Promise((resolve, reject) => {
@@ -30,10 +28,22 @@ async function generateCards() {
             <div class="card-body">
                 <p class="card-text"> <strong>${location.location}</strong></p>
                 <p ckass="card-text">${location.description}</p>
-                <button>See more</button>
+                <button id="${location.id}">Learn more</button>
             </div>
         </div>
     `;
     cards.appendChild(addCard);
+  });
+
+  addButtonListeners();
+}
+
+function addButtonListeners() {
+  let buttons = document.querySelectorAll("button");
+  buttons.forEach((element) => {
+    element.addEventListener("click", () => {
+      sessionStorage.setItem("locationId", `${element.id}`);
+      window.location.replace("./location.html");
+    });
   });
 }

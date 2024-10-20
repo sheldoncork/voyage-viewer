@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", generateCards);
+window.addEventListener("DOMContentLoaded", pageLoaded);
 
 function getData(location = "./data.json") {
   return new Promise((resolve, reject) => {
@@ -9,6 +9,11 @@ function getData(location = "./data.json") {
   });
 }
 
+function pageLoaded() {
+  generateCards();
+  document.getElementById("search-btn").addEventListener("click", search);
+}
+
 async function generateCards() {
   let destinations;
   try {
@@ -17,9 +22,14 @@ async function generateCards() {
     console.error(e);
   }
 
-  let cards = document.getElementById("cards");
+  createCards(destinations);
+}
 
-  destinations.locations.forEach((location) => {
+function createCards(array) {
+  let cards = document.getElementById("cards");
+  cards.innerHTML = "";
+
+  array.locations.forEach((location) => {
     let addCard = document.createElement("div");
     addCard.classList.add("col");
     addCard.innerHTML = `
@@ -28,22 +38,41 @@ async function generateCards() {
             <div class="card-body">
                 <p class="card-text"> <strong>${location.location}</strong></p>
                 <p ckass="card-text">${location.description}</p>
-                <button id="${location.id}">Learn more</button>
+                <button class="learn" id="${location.id}">Learn more</button>
             </div>
         </div>
     `;
     cards.appendChild(addCard);
   });
 
-  addButtonListeners();
-}
-
-function addButtonListeners() {
-  let buttons = document.querySelectorAll("button");
-  buttons.forEach((element) => {
+  //add button listeners
+  let buttons = document.getElementsByClassName("learn");
+  for (let element of buttons) {
     element.addEventListener("click", () => {
       sessionStorage.setItem("locationId", `${element.id}`);
       window.location.replace("./location.html");
     });
+  }
+}
+
+async function search() {
+  let sorted = await getData();
+  let beach = document.getElementById("btncheck1").checked; //beach
+  let mountain = document.getElementById("btncheck2").checked; //mountain
+  let city = document.getElementById("btncheck3").checked; //city
+
+  sorted.locations = sorted.locations.filter((element) => {
+    if (beach === false && element.type === "Beach") {
+      return false;
+    }
+    if (mountain === false && element.type === "Mountain") {
+      return false;
+    }
+    if (city === false && element.type === "City") {
+      return false;
+    }
+    return true; // Keep locations that match the checked options
   });
+
+  createCards(sorted);
 }

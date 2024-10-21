@@ -38,7 +38,7 @@ function createCards(array) {
             <div class="card-body text-center">
                 <p class="card-text"> <strong>${location.location}</strong></p>
                 <p ckass="card-text">${location.description}</p>
-                <button class="learn btn btn-secondary" id="${location.id}">Learn more</button>
+                <button class="learn btn btn-secondary" id="${location.id}">Learn more!</button>
             </div>
         </div>
     `;

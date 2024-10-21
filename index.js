@@ -1,4 +1,7 @@
 window.addEventListener("DOMContentLoaded", createRandomDestinations);
+let destinations; 
+
+randomLocation(); 
 
 function getData(path = "./data.json") {
   return new Promise((resolve, reject) => {
@@ -14,7 +17,6 @@ function getRandomIndex(min, max) {
 }
 
 async function createRandomDestinations() {
-  let destinations;
   try {
     destinations = await getData();
   } catch (e) {
@@ -52,5 +54,23 @@ function addButtonListeners() {
       sessionStorage.setItem("locationId", `${element.id}`);
       window.location.replace("./location.html");
     });
+  });
+}
+
+// function randomLocation() {
+//   let button = document.getElementById("randomCityButton")
+//   randomLocation = getRandomIndex(0, 5);
+//   button.addEventListener("click", () => {
+//       sessionStorage.setItem("locationId", `${element.id}`);
+//       window.location.replace("./location.html");
+//   });
+// }
+
+function randomLocation() {
+  let button = document.getElementById("randomCityButton")
+  let randomLocation = Math.floor(Math.random() * 6);
+  button.addEventListener("click", () => {
+      sessionStorage.setItem("locationId", `${randomLocation}`);
+      window.location.replace("./location.html");
   });
 }

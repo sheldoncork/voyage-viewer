@@ -9,6 +9,19 @@
   <script src="./index.js"></script>
 
   <link rel="stylesheet" href="./styles.css">
+
+  <style>
+    .button {
+        font-size: 0.9em;
+        margin: 20px 0;
+        padding: 10px 20px;
+        background-color: #8dc5e8a1;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    </style>
 </head>
 <body>
 
@@ -35,15 +48,21 @@
     <div class="bg-overlay">
       <div class="bg-text text-center">
         <h1 class="display-3">Welcome to Voyage Viewer!</h1>
-        <p class="text-wrap">Here you can find where you want to go for your next vacation!</p>
+        <p class="text-wrap">Here you can find where you want to go for your next vacation.</p>
+        <button class="button" id="randomCityButton">
+          Choose a city for me! 
+        </button>
       </div>
     </div>
   </div>
 
-<div class="album py-2 bg-body-tertiary"></div>
+<div class="album py-2 bg-body-tertiary"> </div>
   <div class="container">
+    <div class="display-2"style="text-align: center; font-size: 2.0em; margin: 30px 0;">
+      Could one of these destinations be your next adventure?
+    </div>
       <div id="col" class="row row-cols-2 g-4">
-
+    
       </div>
   </div>
 </div>

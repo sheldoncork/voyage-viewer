@@ -1,1 +1,1 @@
-https://github.com/sheldoncork/voyage-viewer
+https://sheldoncork.github.io/voyage-viewer/

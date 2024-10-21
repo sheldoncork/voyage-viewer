@@ -1,13 +1,5 @@
 window.addEventListener("DOMContentLoaded", pageLoaded);
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  let locationId = sessionStorage.getItem("locationId");
-  if (locationId !== null) {
-      // Use the locationId to display the correct images
-  } else {
-      console.error("locationId is not set in sessionStorage");
-  }
-});
 
 function getData(location = "./data.json") {
   return new Promise((resolve, reject) => {
